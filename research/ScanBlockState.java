@@ -3,7 +3,7 @@ package thaumcraft.api.research;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 
 public class ScanBlockState implements IScanThing {
 	
@@ -25,7 +25,7 @@ public class ScanBlockState implements IScanThing {
 
 	@Override
 	public boolean checkThing(EntityPlayer player, Object obj) {		
-		if (obj!=null && obj instanceof BlockPos && player.worldObj.getBlockState((BlockPos) obj)==blockState) {
+		if (obj!=null && obj instanceof BlockPos && player.world.getBlockState((BlockPos) obj)==blockState) {
 				return true;
 		}
 		return false;

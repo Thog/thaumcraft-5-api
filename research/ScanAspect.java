@@ -5,7 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectHelper;
 import thaumcraft.api.aspects.AspectList;
@@ -41,8 +41,8 @@ public class ScanAspect implements IScanThing {
 			if (obj instanceof EntityItem && ((EntityItem)obj).getEntityItem()!=null) 
 				is = ((EntityItem)obj).getEntityItem();
 			if (obj instanceof BlockPos) {
-				Block b = player.worldObj.getBlockState((BlockPos) obj).getBlock();
-				is = new ItemStack(b,1,b.getMetaFromState(player.worldObj.getBlockState((BlockPos) obj)));
+				Block b = player.world.getBlockState((BlockPos) obj).getBlock();
+				is = new ItemStack(b,1,b.getMetaFromState(player.world.getBlockState((BlockPos) obj)));
 			}
 			
 			if (is!=null) {

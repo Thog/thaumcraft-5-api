@@ -40,7 +40,9 @@ public class ItemGenericEssentiaContainer extends Item implements IEssentiaConta
 	    
 	@SideOnly(Side.CLIENT)
     @Override
-    public int getColorFromItemStack(ItemStack stack, int par2) 
+	// TODO: Check if correct
+    //public int getColorFromItemStack(ItemStack stack, int par2)
+	public int getDamage(ItemStack stack)
     {
     	if (getAspects(stack)!=null) {
     		return  getAspects(stack).getAspects()[0].getColor();
